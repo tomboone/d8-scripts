@@ -4,17 +4,7 @@ An always-under-construction collection of shell scripts to automate various rep
 
 ## Installation
 
-To install d8-scripts in your Drupal 8 project, first add a new installer-path to your Drupal project's `composer.json`:
-
-```json
-"extra": {
-    "installer-paths": {
-        "scripts/{$name}": ["type:drupal-script"]
-    }
-}
-```
-
-Then run:
+To install d8-scripts in your Drupal 8 project, just run:
 
 ```shell script
 composer require tomboone/d8-scripts
@@ -23,13 +13,13 @@ composer require tomboone/d8-scripts
 All scripts in the package will now be available to your Drupal 8 project from the following path:
 
 ```shell script
-scripts/d8-scripts
+vendor/tomboone/d8-scripts
 ```
 
 You may need to alter the scripts' permissions to make them executable, e.g.:
 
 ```shell script
-chmod u+x scripts/d8-scripts/*.sh
+chmod u+x vendor/tomboone/d8-scripts/*.sh
 ```
 
 ## Available scripts
@@ -38,7 +28,7 @@ All scripts are designed to be used in a local Drupal 8 development environment 
 
 ### updates.sh
 
-The `updates.sh` script combines the Git, Drush, and Composer aspects of updating Drupal core and contrib modules/themes into a single process.
+The `vendor/tomboone/d8-scripts/updates.sh` script combines the Git, Drush, and Composer aspects of updating Drupal core and contrib modules/themes into a single process.
 
 1. First it asks if you'd like to create a new branch in your Git repository. If you answer `y`, a new branch titled `update/<YYYY-MM-DD> is checked out.
 1. You'll then be asked for the machine name of the module or theme you wish to update first. (If you wish to update Drupal core, just enter `core`.) This initiates a `composer update` command.
